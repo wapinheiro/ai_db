@@ -74,8 +74,11 @@ class GeminiInterface():
         )
 
         convo = model.start_chat()
-        convo.send_message(prompt)        
+        convo.send_message(prompt)                
         return convo.last.text
+    
+        #return model.generate_content(prompt)
+    
 
 
 
