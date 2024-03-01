@@ -68,9 +68,9 @@ class GeminiInterface():
         ]
 
         model = genai.GenerativeModel(
-            model_name= self.model_name,
-            generation_config=generation_config,
-            safety_settings=safety_settings
+            model_name= self.model_name
+            , generation_config=generation_config
+            , safety_settings=safety_settings
         )
 
         convo = model.start_chat()

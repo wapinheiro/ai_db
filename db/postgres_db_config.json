@@ -1,0 +1,7 @@
+{
+    "database_name": "ai-db",
+    "user": "postgres",
+    "password": "Getinthere1980",
+    "host": "localhost",
+    "port": "5432"
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM GUI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="metadata">
+            <h2>Metadata</h2>
+            <p>Database: Sample Database</p>
+            <p>LLM: Bard</p>
+            <p>Model: base</p>
+            <p>Token Count: 100</p>
+        </div>
+        <div class="question-box">
+            <h2>Your Question</h2>
+            <textarea id="question" rows="5"></textarea>
+        </div>
+        <div class="button-row">
+            <button id="settings" disabled>Settings</button>
+            <button id="ok" disabled>OK</button>
+        </div>
+        <div class="answer-box">
+            <h2>Answer</h2>
+            <textarea id="answer" rows="5"></textarea>
+        </div>
+        <div class="prompts-box">
+            <h2>Prompts</h2>
+            <textarea id="prompts" rows="5"></textarea>
+        </div>
+        <div class="sql-box">
+            <h2>SQL</h2>
+            <textarea id="sql" rows="5"></textarea>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

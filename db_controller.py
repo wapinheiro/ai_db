@@ -1,5 +1,6 @@
 import psycopg2
 import json
+import re
 
 def connect_to_database(database_name, user, password, host, port):
     """Establishes a connection to the PostgreSQL database"""
@@ -34,6 +35,24 @@ def execute_query_and_get_json(conn, sql_query):
     except (Exception, psycopg2.Error) as error:        
         print("Error executing query:", error)                
         return None
+    
+def get_ddl_content(path):
+    with open(path, 'r') as file:
+        return file.read()
+    
+def format_sql(query_text):
+    sql_pattern = r'`sql\s+(.*)\s+`'
+    match = re.search(sql_pattern, query_text, re.DOTALL)  
+
+    if match:
+        sql_code = match.group(1).strip()          
+    else:
+        sql_code =  query_text
+
+    return sql_code
+
+
+ 
 
 
 # *****  Example Usage *****
