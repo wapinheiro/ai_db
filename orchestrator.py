@@ -8,7 +8,7 @@ from db_controller import *
 class Orchestrator():
     def __init__(self) -> None:
         pass
-    def get_prompt_from_gemini(prompt):
+    def get_prompt_from_gemini(self, prompt):
         # Model setup
         gem_model_name = "gemini-1.0-pro"
         key_file_path = "resources/gemini_api_key.json"
@@ -22,7 +22,7 @@ class Orchestrator():
         
         return gem_interface.get_prompt(prompt)
     
-    def execute_sql(db_config_file, sql_query):
+    def execute_sql(self,db_config_file, sql_query):
         data = get_json_file(db_config_file)
         database_name = data['database_name']
         user = data['user']
