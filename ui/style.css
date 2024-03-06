@@ -1,23 +1,22 @@
+
+.title {
+    text-align: center;
+}
+
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    background-color: whitesmoke;
 }
 
 .metadata,
-.question-box,
-.answer-box,
-.prompts-box,
-.sql-box {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
+.question-box
+.answer-box
 
 .metadata h2,
 .question-box h2,
@@ -29,19 +28,108 @@
 
 .button-row {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    width: 100%;
+    width: 100%;   
+    align-items: center; 
+    padding: 2px;  
+    /* background-color: #3498db;   */
 }
 
 .button-row button {
+    color: beige;
     padding: 10px 20px;
-    border: 1px solid #ddd;
+    border: 1px solid gray;
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 200px;
+    background-color: #3498db;
 }
 
 textarea {
+    min-width: 250px;
     width: 100%;
     font-family: inherit;
     font-size: 16px;
+    background-color: white;
+    resize: none; 
+    overflow: auto; 
+    word-break: break-all;
+    border: 1px solid gray;
+    
+    
 }
+
+
+#loadingSpinner {
+    width: 20px;
+    height: 20px;
+    margin: 10px auto; /* Center the spinner */
+    border: 5px solid #ddd; 
+    border-radius: 50%;
+    border-top-color: #3498db; /* Example color - choose your own */
+    animation: spin 500ms linear infinite;
+    
+}
+
+.question-answer-container {
+    display: flex; /* Make it a flexbox container */
+    flex-direction: row; /* Arrange elements horizontally */
+    align-items: center; /* Vertically align elements */
+    width: 100%; /* Stretch the container to full width */
+    padding-bottom: 10px;
+}
+
+.question-box 
+.answer-box {    
+    flex: 1; /* Make each box flexible and grow to fill available space */
+    margin: 10px; /* Add some margin for spacing */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+
+.accordion-container { 
+    width: 100%; 
+  }
+  
+  .accordion {
+    background-color: #eee; 
+    color: #444; 
+    cursor: pointer;
+    padding: 18px; 
+    width: 100%; 
+    border: none;
+    text-align: left; 
+    outline: none;
+    font-size: 15px; 
+    transition: 0.4s; 
+  }
+  
+  .panel {
+    padding: 0 18px; 
+    display: block; 
+    background-color: white; 
+    overflow: hidden;
+    max-height: 0; 
+    transition: max-height 0.3s ease-out; 
+  }
+  
+  .panel.active {
+    max-height: 200px;  /* Adjust as needed */
+  }
+
+  .accordion.active { 
+    background-color: #ddd; 
+  }
+  

@@ -1,6 +1,8 @@
 import psycopg2
 import json
 import re
+import sqlite3
+from util import *
 
 def connect_to_database(database_name, user, password, host, port):
     """Establishes a connection to the PostgreSQL database"""
@@ -51,8 +53,66 @@ def format_sql(query_text):
 
     return sql_code
 
+import json
+import sqlite3
 
- 
+def run_sql_sqlite(query):
+  """
+  Runs an SQL query on a SQLite database and returns the results in JSON format.
+
+  Args:
+    query: The SQL query to run.
+
+  Returns:
+    A JSON string containing the results of the query, or None if an error occurs.
+  """
+
+  database_file = "mydatabase.db" 
+  try:
+    conn = sqlite3.connect(database_file)
+
+    # Enable JSON functions if your SQLite version supports them
+    conn.row_factory = sqlite3.Row  # Access results by column name 
+
+    cursor = conn.cursor()
+    cursor.execute(query)
+
+    # Construct JSON
+    data = [dict(row) for row in cursor.fetchall()]
+    json_string = json.dumps(data)
+
+    return json_string
+
+  except sqlite3.Error as error:
+    print("Error executing query:", error)
+    return None
+
+  finally:
+    if conn:
+      conn.close()
+
+
+def run_sql_postgres(sql_query):
+    # db_settings = get_json_file("db/db_settings.json")
+    # postgres_config_file = get_json_file(db_settings['postgres_fin_config'])
+    postgres_config_file = "db/postgres_db_config.json"
+    data = get_json_file(postgres_config_file)
+    database_name = data['database_name']
+    user = data['user']
+    password = data['password']
+    host = data['host']
+    port = data['port']
+    
+    connection = connect_to_database(database_name, user, password, host, port)
+    if connection:
+        json_result = execute_query_and_get_json(connection, sql_query)
+        #if json_result: print("Here's the json result from the DB: " + json_result)
+        connection.close()
+    
+    if json_result == None: 
+        print("There was an error. Please try again")
+        quit()
+    return json_result 
 
 
 # *****  Example Usage *****
