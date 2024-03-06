@@ -14,7 +14,10 @@
     background-color: whitesmoke;
 }
 
-.metadata,
+.metadata{
+    display: flex;
+    justify-content: space-around;
+}
 .question-box
 .answer-box
 

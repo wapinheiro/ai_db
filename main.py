@@ -11,11 +11,13 @@ data = get_json_file("db/db_settings.json")
 # db_config_file = data['postgres_fin_config']
 # ddl_file = data['postgres_fin_ddl']
 # sql_function = run_sql_postgres
+# metadata = get_json_file("resources/metadata.json")["postgres_fin"]
 
 #SQLite DB
 db_config_file = ""
 ddl_file = data['sqlite_cl_studies_ddl']
 sql_function = run_sql_sqlite
+metadata = get_json_file("resources/metadata.json")["sqlite_cl_studies"]
 
 orc = Orchestrator(db_config_file, ddl_file, sql_function)
 
