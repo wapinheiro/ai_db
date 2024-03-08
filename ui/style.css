@@ -60,7 +60,7 @@ textarea {
     resize: none; 
     overflow: auto; 
     word-break: break-all;
-    border: 1px solid gray;
+    border: 1px solid lightgray;
     
     
 }
