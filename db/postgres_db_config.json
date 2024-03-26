@@ -1,7 +1,7 @@
 {
-    "database_name": "ai-db",
+    "database_name": "Clinical_Studies_DB",
     "user": "postgres",
-    "password": "Getinthere1980",
+    "password": "123",
     "host": "localhost",
     "port": "5432"
 }
