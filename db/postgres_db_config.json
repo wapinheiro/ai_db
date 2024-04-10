@@ -1,5 +1,5 @@
 {
-    "database_name": "Clinical_Studies_DB",
+    "database_name": "clinical_studies",
     "user": "postgres",
     "password": "123",
     "host": "localhost",

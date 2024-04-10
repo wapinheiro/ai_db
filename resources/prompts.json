@@ -1,0 +1,4 @@
+{
+    "prompt_1": "I will give you information about my database in DLL format. I will also provide you with a question and with some restriction rules which you must follow. Based on these information, write an SQL code in postgres to answer the provided question.",
+    "prompt_2": "I will provide you with a json format text. This text is the result of a SQL query. I will also provide you with a question. You will format the json text into natural language format so as to respond to the question."
+}

@@ -7,27 +7,29 @@ from db_controller import *
 
 data = get_json_file("db/db_settings.json")
 
+
 #postgress DB
-# db_config_file = data['postgres_fin_config']
-# ddl_file = data['postgres_fin_ddl']
-# sql_function = run_sql_postgres
-# metadata = get_json_file("resources/metadata.json")["postgres_fin"]
+db_config_file = data['postgres_cl_studies_config']
+ddl_file = data['cl_studies_ddl']
+sql_function = run_sql_postgres
+metadata = "Postgre Database"#get_json_file("resources/metadata.json")["postgres_fin"] 
 
 #SQLite DB
-db_config_file = ""
-ddl_file = data['sqlite_cl_studies_ddl']
-sql_function = run_sql_sqlite
-metadata = get_json_file("resources/metadata.json")["sqlite_cl_studies"]
+#db_config_file = ""
+#ddl_file = data['sqlite_cl_studies_ddl']
+#sql_function = run_sql_sqlite
+#metadata = get_json_file("resources/metadata.json")["sqlite_cl_studies"]
 
 orc = Orchestrator(db_config_file, ddl_file, sql_function)
 
-app = Flask(__name__)
+app = Flask(__name__) #this is the web server
 CORS(app)
 
 @app.route('/ask_question', methods=['POST'])
 def ask_question():
     data = request.get_json()
     question = data['question']
+    print(question)
     answer = orc.ask_question(question)
     prompt = orc.prompts
     sql_query = orc.sql_query

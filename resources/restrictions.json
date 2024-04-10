@@ -1,0 +1,11 @@
+{
+    "restrictions_postgres":[
+        "1) Provide just the SQL code and no other text.",
+        "2) Always define columns indicating its respective table or alias.",
+        "3) Don't assume anything, if you need to use a table that's not in the DDL, it's because it doesn't exist. In this case just provide a NULL response.",
+        "4) Make sure to only use functions that really exist.",
+        "5) For date operations, if needed, use Extract function.",
+        "6) Be very descriptive when naming columns. For example: 'total sales in 2024' instead of just 'total sales'. These names will be read by other systems and people who might not have the right context.",
+        "7) always use the schema when declaring the tables."
+    ]
+}

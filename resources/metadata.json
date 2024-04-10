@@ -1,0 +1,4 @@
+{
+    "postgres_fin": [{"Database": "Postgres - fin", "LLM": "Gemini Pro", "Model": "gemini-1.0-pro"}],
+    "sqlite_cl_studies":[{"Database": "SQLite3 - Clinical Studies", "LLM": "Gemini Pro", "Model": "gemini-1.0-pro"}]
+}

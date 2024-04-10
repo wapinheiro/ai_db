@@ -1,0 +1,9 @@
+{
+    "postgres_fin_config": "db/postgres_db_config.json",
+    "postgres_fin_ddl": "db/postgres_db_structure.ddl",
+    "postgres_cl_studies_ddl": "db/postgres_cl_studies.ddl",
+    "sqlite_cl_studies_ddl": "db/sqlite_cl_studies.ddl",
+    "postgres_cl_studies_config": "db/postgres_db_config.json",
+    "cl_studies_ddl": "db/cl_studies.ddl"
+        
+}
