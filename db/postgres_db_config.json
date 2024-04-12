@@ -1,7 +1,7 @@
 {
-    "database_name": "clinical_studies",
+    "database_name": "cl_studies",
     "user": "postgres",
-    "password": "123",
+    "password": "Getinthere1980",
     "host": "localhost",
     "port": "5432"
 }
