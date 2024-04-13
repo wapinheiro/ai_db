@@ -9,12 +9,10 @@ const accordions = document.querySelectorAll('.accordion');
 
 let buttonClickedOnce = false; // flag to track clicks
 
-console.log("test")
 okButton.addEventListener('click', function() {
     const question = questionInput.value;
 
     loadingSpinner.style.display = 'block'; 
-    console.log(question)
 
     fetch('http://localhost:5000/ask_question', {
         method: 'POST',

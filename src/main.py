@@ -29,7 +29,6 @@ CORS(app)
 def ask_question():
     data = request.get_json()
     question = data['question']
-    print(question)
     answer = orc.ask_question(question)
     prompt = orc.prompts
     sql_query = orc.sql_query

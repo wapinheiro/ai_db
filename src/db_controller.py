@@ -53,8 +53,6 @@ def format_sql(query_text):
 
     return sql_code
 
-import json
-import sqlite3
 
 def run_sql_sqlite(query):
   """
