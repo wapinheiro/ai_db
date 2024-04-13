@@ -17,4 +17,4 @@ COPY . ./
 EXPOSE 5000  
 
 # Command to start your backend application
-CMD ["python", "main.py"]  # Replace 'app.py' with your main file
+CMD ["python", "src/main.py"]  # Replace 'app.py' with your main file
