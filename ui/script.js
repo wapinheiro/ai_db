@@ -13,8 +13,8 @@ okButton.addEventListener('click', function() {
     const question = questionInput.value;
 
     loadingSpinner.style.display = 'block'; 
-
-    fetch('http://localhost:5000/ask_question', {
+    
+    fetch('http://localhost:8080/ask_question', {//use por 5000 for localhost or 8080 for container
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

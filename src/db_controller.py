@@ -98,7 +98,7 @@ def run_sql_postgres(sql_query):
     database_name = data['database_name']
     user = data['user']
     password = data['password']
-    host = data['host']
+    host = '10.2.168.193' #data['host']
     port = data['port']
     
     connection = connect_to_database(database_name, user, password, host, port)

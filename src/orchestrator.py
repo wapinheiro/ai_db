@@ -86,6 +86,7 @@ class Orchestrator:
         #parse result to extract only the sql part
         sql_query = format_sql(prompt_result)   
         self.sql_query = sql_query 
+        print("Here's is the SQL query: " + sql_query)
         # execute sql code          
         # db_json_result = self.execute_sql(self.db_config_file, sql_query)
         # function_name = run_sql_postgres
