@@ -41,11 +41,11 @@ def pg_connection_test(conn_info):
 
 def test_pg_connection_test():
     connection_info = {
-    'host': 'localhost',
+    'host': '3.135.247.50',
     'port': 5432,
-    'database': 'cl_studies',
+    'database': 'postgres',
     'user': 'postgres',
-    'password': 'Getinthere1980'
+    'password': '123'
 }
 
     if pg_connection_test(connection_info):

@@ -1,7 +1,7 @@
 {
-    "database_name": "cl_studies",
+    "database_name": "postgres",
     "user": "postgres",
-    "password": "Getinthere1980",
-    "host": "localhost",
+    "password": "123",
+    "host": "3.135.247.50",
     "port": "5432"
 }
