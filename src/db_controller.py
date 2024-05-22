@@ -96,11 +96,14 @@ def run_sql_postgres(sql_query):
     # postgres_config_file = get_json_file(db_settings['postgres_fin_config'])
     postgres_config_file = "db/postgres_db_config.json"    
     data = get_json_file(postgres_config_file)
+    #print("db_controller.run_sql_postgres()[line 99]: data = ")
+    #print(data)
     database_name = data['database_name']
     user = data['user']
     password = data['password']
     host = data['host']
     port = data['port']
+    json_result = None
     
     connection = connect_to_database(database_name, user, password, host, port)
     if connection:
@@ -108,8 +111,8 @@ def run_sql_postgres(sql_query):
         #if json_result: print("Here's the json result from the DB: " + json_result)
         connection.close()
     
-    if json_result == None: 
-        print("There was an error. Please try again")
+    if json_result is None: 
+        print("There was an error connecting with the Database. Check database connection information.")
         quit()
     return json_result 
 

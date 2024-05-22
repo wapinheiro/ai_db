@@ -28,7 +28,7 @@ CORS(app)
 @app.route('/ask_question', methods=['POST'])
 def ask_question():
     data = request.get_json()
-    question = data['question']
+    question = data['question']    
     answer = orc.ask_question(question)
     prompt = orc.prompts
     sql_query = orc.sql_query
