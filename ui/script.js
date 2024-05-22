@@ -14,7 +14,7 @@ okButton.addEventListener('click', function() {
 
     loadingSpinner.style.display = 'block'; 
     
-    fetch('http://3.149.232.56:8080/ask_question', {//use por 5000 for localhost or 8080 for container
+    fetch('http://3.149.232.56/ask_question', {//use por 5000 for localhost or 8080 for container
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
