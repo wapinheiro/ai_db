@@ -4,6 +4,7 @@ import re
 import sqlite3
 from util import *
 
+
 def connect_to_database(database_name, user, password, host, port):
     """Establishes a connection to the PostgreSQL database"""
     try:
@@ -93,12 +94,12 @@ def run_sql_sqlite(query):
 def run_sql_postgres(sql_query):
     # db_settings = get_json_file("db/db_settings.json")
     # postgres_config_file = get_json_file(db_settings['postgres_fin_config'])
-    postgres_config_file = "db/postgres_db_config.json"
+    postgres_config_file = "db/postgres_db_config.json"    
     data = get_json_file(postgres_config_file)
     database_name = data['database_name']
     user = data['user']
     password = data['password']
-    host = '10.2.168.193' #data['host']
+    host = data['host']
     port = data['port']
     
     connection = connect_to_database(database_name, user, password, host, port)

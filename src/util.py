@@ -1,5 +1,6 @@
 import json
 import os
+import psycopg2
 
 
 def get_json_file(path):
@@ -9,8 +10,6 @@ def get_json_file(path):
     with open(path, "r") as f:
         return json.load(f)
     
-
-import psycopg2
 
 def pg_connection_test(conn_info):
     """
@@ -53,7 +52,10 @@ def test_pg_connection_test():
     else:
         print("Database connection failed.")
 
+
+
 if __name__ == '__main__':
     test_pg_connection_test()
+    
     
         

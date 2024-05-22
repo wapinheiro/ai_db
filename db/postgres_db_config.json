@@ -2,6 +2,6 @@
     "database_name": "postgres",
     "user": "postgres",
     "password": "123",
-    "host": "3.135.247.50",
+    "host": "3.149.232.56",
     "port": "5432"
 }

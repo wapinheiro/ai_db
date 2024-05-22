@@ -11,7 +11,7 @@ class Orchestrator:
         self.ddl_file = ddl_file     
         self.sql_function = sql_function
         #get api key    
-        key_file_path = "resources/gemini_api_key.json"
+        key_file_path = "resources/gemini_api_key.json"        
         data = get_json_file(key_file_path)
         self.api_key =  data["key"]
         self.prompts = ""
