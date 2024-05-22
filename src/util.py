@@ -40,7 +40,7 @@ def pg_connection_test(conn_info):
 
 def test_pg_connection_test():
     connection_info = {
-    'host': '3.149.232.56',
+    'host': 'localhost',
     'port': 5432,
     'database': 'postgres',
     'user': 'postgres',
